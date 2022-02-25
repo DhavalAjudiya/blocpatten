@@ -36,11 +36,11 @@ class HomeScreen extends StatelessWidget {
               },
               builder: (context, state) {
                 if (state is InternetGainedState) {
-                  return Text("Connected!");
+                  return const Text("Connected!");
                 } else if (state is InternetLostState) {
-                  return Text(" Not Connected!");
+                  return const Text(" Not Connected!");
                 } else {
-                  return Text("Loading...");
+                  return const Text("Loading...");
                 }
               },
             ),

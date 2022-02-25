@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppString {
   ///mainScreen
   static const login = "Login with Email";
@@ -10,4 +12,7 @@ class AppString {
   static const loginbutton = "Login";
 
   static const signinappbar = "LOGIN WITH Google";
+
+  ///blocApicalling
+  static const api = "";
 }
