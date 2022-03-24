@@ -7,18 +7,14 @@ import 'package:blocpatten/apicalling_cubit/repository/api-repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CricketFetchCubit extends Cubit<CricketFetchState> {
-  CricketFetchCubit({
-    required this.apiRepository,
-  }) : super(CricketFetchInitial());
-
-  final ApiRepository apiRepository;
+  CricketFetchCubit() : super(CricketFetchInitial());
 
   Future<void> fetchCricketApi() async {
     emit(CricketFetchLoading());
     try {
       log("cubitError==>>00");
 
-      final Cricket? criketlist = await apiRepository.getCricketList();
+      final Cricket? criketlist = await ApiRepository().getCricketList();
       log("cubitError==>>111");
       print("cubit==${criketlist?.toJson().toString()}");
       emit(CricketFetchLoaded(cricketList: criketlist!));

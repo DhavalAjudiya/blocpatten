@@ -21,9 +21,9 @@ class ApiScreen extends StatelessWidget {
               return Text(state.failuer.Message);
             } else if (state is CricketFetchLoaded) {
               return ListView.builder(
-                itemCount: state.cricketlist.newsdata!.length,
+                itemCount: state.cricketList.newsdata!.length,
                 itemBuilder: (context, index) {
-                  final newData = state.cricketlist.newsdata![index];
+                  final newData = state.cricketList.newsdata![index];
                   return Column(
                     children: [
                       Text('${newData.newsid}'),
