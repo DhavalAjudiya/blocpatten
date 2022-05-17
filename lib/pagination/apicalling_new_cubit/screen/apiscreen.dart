@@ -33,24 +33,26 @@ class _ApiState extends State<Api> {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-            decoration: BoxDecoration(
-              color: Colors.blue.shade200,
-              borderRadius: BorderRadius.circular(30),
+          decoration: BoxDecoration(
+            color: Colors.blue.shade200,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: TextField(
+            onChanged: (value) {
+              pagintionCubit.fetchCricketApi(value);
+              print("value==>>>$value");
+            },
+            controller: searchcontroller,
+            decoration: const InputDecoration(
+              hintText: "Search",
+              contentPadding: EdgeInsets.all(15),
+              border: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
             ),
-            child: TextField(
-              onChanged: (value) {
-                pagintionCubit.fetchCricketApi(value);
-              },
-              controller: searchcontroller,
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                errorBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                contentPadding: EdgeInsets.all(15),
-                hintText: "Search",
-              ),
-            )),
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () {

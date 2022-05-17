@@ -74,11 +74,6 @@ class Loginscreen extends StatelessWidget {
               ),
               BlocBuilder<LoginBloc, LoginState>(
                 builder: (context, state) {
-                  if (state is LoginLodingState) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
                   return CupertinoButton(
                     color:
                         (state is LoginvalidState) ? Colors.blue : Colors.grey,
@@ -98,10 +93,31 @@ class Loginscreen extends StatelessWidget {
                   );
                 },
               ),
+              CupertinoButton(
+                color: Colors.grey,
+                child: const Text(
+                  AppString.loginbutton,
+                ),
+                onPressed: () {
+                  showBottomSheet(context);
+                },
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Future showBottomSheet(context) {
+    return showModalBottomSheet(
+      builder: (BuildContext context) {
+        return BlocProvider.value(
+          value: BlocProvider.of<LoginBloc>(context),
+          child: Container(color: Colors.red, height: 500),
+        );
+      },
+      context: context,
     );
   }
 }

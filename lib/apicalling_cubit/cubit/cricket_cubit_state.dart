@@ -16,9 +16,7 @@ class CricketFetchLoading extends CricketFetchState {
 
 class CricketFetchLoaded extends CricketFetchState {
   final Cricket cricketList;
-
   CricketFetchLoaded({required this.cricketList});
-  // HomeSuccess({required this.news});
   @override
   List<Object?> get props => [cricketList];
 }

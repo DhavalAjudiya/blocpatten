@@ -15,7 +15,7 @@ class ApiRepository {
   Future<Pagination?> getCricketData(String data) async {
     const url = "https://yeay-dev.xc.io/search";
     Map<String, dynamic> body = {
-      "searchText": data,
+      "searchText": "",
       "pageIndex": '0',
       "limit": 20,
       "returnQueryCount": true
@@ -29,7 +29,10 @@ class ApiRepository {
       final response = await http.post(Uri.parse(url),
           body: jsonEncode(body), headers: headers);
       // log("getcricketdata ===>111");
+      log('API body: $body');
+
       log("getcricketdata ===>${response.body}");
+
       if (response.statusCode == 200) {
         return Pagination.fromJson(jsonDecode(response.body));
       }

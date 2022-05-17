@@ -166,3 +166,40 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+//
+// import 'modal.dart';
+//
+// class DataChart extends StatelessWidget {
+//   final hiveBox = Hive.box<Data>('dataBox');
+//   String val1 = "";
+//   double pot1 = 0;
+//   String val2 = "";
+//   double pot2 = 1;
+//   String val3 = "";
+//   double pot3 = 2;
+//
+//   //late List<Data> data = dataFromHiveBox;
+//
+//   late List<Data> data = data as List<Data>;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//           child: SfCartesianChart(
+//         title: ChartTitle(text: 'Flutter Chart'),
+//         legend: Legend(isVisible: true),
+//         series: <ColumnSeries<Data, num>>[
+//           ColumnSeries<Data, num>(
+//               dataSource: data,
+//               xValueMapper: (Data, _) => pot1,
+//               yValueMapper: (Data, _) => pot3,
+//               dataLabelSettings: const DataLabelSettings(isVisible: true)),
+//         ],
+//         tooltipBehavior: TooltipBehavior(enable: true),
+//       )),
+//     );
+//   }
+// }
